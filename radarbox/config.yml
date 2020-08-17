@@ -1,0 +1,19 @@
+container: docker.io/mikenye/radarbox:latest
+created: 2020-08-17 16:53:53.501852
+name: radarbox
+ports: {}
+volumes:
+        /sys/fs/cgroup:
+                bind: /sys/fs/cgroup
+                mode: ro
+privileged: false
+tty: false
+environment:
+        TZ:             Europe/Kiev
+        BEASTHOST:      192.168.1.7
+        LAT:            49.784458
+        LONG:           23.636559
+        ALT:            284
+        SHARING_KEY:    01a4870e441c4f7b19253f0797c54e31
+network_mode: bridge
+working_dir: /root

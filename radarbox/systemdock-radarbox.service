@@ -1,0 +1,16 @@
+[Unit]
+Description=RadarBox in Docker container running as a service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+RestartSec=30s
+Type=simple
+NotifyAccess=all
+ExecStart=-/usr/bin/systemdock -v -a start -n radarbox
+ExecStop=/usr/bin/systemdock -v -a stop -n radarbox
+
+[Install]
+WantedBy=multi-user.target
